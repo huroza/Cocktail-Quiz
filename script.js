@@ -314,20 +314,26 @@ const submit = _ => {
     summitButtonContainer.innerHTML = ''
     multipleChoiceContainer.innerHTML += `</br><button type="button" class="btn btn-success" onclick=nextDrink()>Next</button>`
     window.scrollTo(0, document.body.scrollHeight);
+    checked = {}
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    allCheckboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+
+  } else {
+    errorContainer.innerHTML = ''
+    errorContainer.innerHTML += '<button type="button" class="btn btn-outline-danger disabled" style="width:100%" >Try Again</button>'
+
+    checked = {}
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    allCheckboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    setTimeout((_ => {
+      errorContainer.innerHTML = '';
+    }), 5000)
 
   }
-
-  errorContainer.innerHTML = ''
-  errorContainer.innerHTML += '<button type="button" class="btn btn-outline-danger disabled" style="width:100%" >Try Again</button>'
-
-  checked = {}
-  const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  allCheckboxes.forEach(checkbox => {
-    checkbox.checked = false;
-  });
-  setTimeout((_ => {
-    errorContainer.innerHTML = '';
-  }), 5000)
 
 }
 
