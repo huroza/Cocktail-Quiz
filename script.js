@@ -339,5 +339,5 @@ const nextDrink = _ => {
   multipleChoiceContainer.innerHTML = '';
   errorContainer.innerHTML = '';
   summitButtonContainer.innerHTML = '';
-  data()
+  loadData()
 }
